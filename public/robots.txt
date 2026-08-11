@@ -5,4 +5,4 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://xploreautomations.com/sitemap.xml
+Sitemap: https://www.xploreautomation.me/sitemap.xml
