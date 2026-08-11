@@ -4,18 +4,18 @@ import './Narrative.css'
 const problems = [
     {
         number: '01',
-        title: "Hours lost to editing",
-        description: "Time you could spend creating, building your brand, or actually living your life."
+        title: "Leads slipping through the cracks",
+        description: "Every missed call is a missed deal. Without automation, your business leaks revenue every single day."
     },
     {
         number: '02',
-        title: "Videos that don't feel 'premium'",
-        description: "The pacing's off. Sound is muddy. Something's missing—and viewers notice."
+        title: "Repetitive tasks eating your time",
+        description: "Hours spent on data entry, follow-ups and manual workflows that a well-built system could run in seconds."
     },
     {
         number: '03',
-        title: "Retention drops at 30 seconds",
-        description: "The hook isn't hooking. You're losing viewers before the value hits."
+        title: "Growth hitting a ceiling",
+        description: "You cannot scale a business that depends entirely on human bandwidth. There is a smarter way."
     }
 ]
 
@@ -47,8 +47,8 @@ function Narrative() {
                 <div className="narrative-header reveal">
                     <span className="section-label mono">The Problem</span>
                     <h2 className="narrative-title">
-                        Your content deserves<br />
-                        better than <span className="strike">good enough</span>
+                        Your business deserves<br />
+                        better than <span className="strike">manual everything</span>
                     </h2>
                 </div>
 
@@ -72,12 +72,12 @@ function Narrative() {
                     <div className="solution-content">
                         <span className="section-label mono accent">The Solution</span>
                         <h3 className="solution-title">
-                            Raw input. Proven process.<br />
-                            <span className="accent">High-impact output.</span>
+                            Your data. Our AI.<br />
+                            <span className="accent">Results that run 24/7.</span>
                         </h3>
                         <p className="solution-desc">
-                            We take your footage and transform it through a precision-driven workflow.
-                            No gimmicks. No over-editing. Just content that performs.
+                            We build and deploy intelligent systems tailored to your business.
+                            No generic tools. No half measures. Just AI that works.
                         </p>
                     </div>
                 </div>

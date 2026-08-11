@@ -4,10 +4,11 @@ import Narrative from './components/Narrative/Narrative'
 import Work from './components/Work/Work'
 import Capabilities from './components/Capabilities/Capabilities'
 import Testimonial from './components/Testimonial/Testimonial'
+import Pricing from './components/Pricing/Pricing'
+import Contact from './components/Contact/Contact'
 import CTA from './components/CTA/CTA'
 import Footer from './components/Footer/Footer'
 import Dither from './components/Dither'
-import CalBookingButton from './components/CalBookingButton/CalBookingButton'
 import './App.css'
 
 function App() {
@@ -37,13 +38,13 @@ function App() {
           <Work />
           <Capabilities />
           <Testimonial />
+          <Pricing />
+          <Contact />
           <CTA />
         </main>
         <Footer />
       </div>
-      <CalBookingButton floating showFreeBadge>
-        Book Free Call
-      </CalBookingButton>
+
     </div>
   )
 }

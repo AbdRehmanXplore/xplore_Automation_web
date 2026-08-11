@@ -1,0 +1,70 @@
+  # Website Build Prompt — Xplore Automations
+
+Use this as a single, complete brief to build the site (feed it to a dev, an AI builder, or use it yourself as a spec).
+
+## 1. Company Overview
+- **Name:** Xplore Automations
+- **What we do:** We build and deploy AI-powered systems for businesses.
+- **Services offered (5 total):**
+  1. AI Automations (workflow/process automation)
+  2. AI Call Agents (voice agents)
+  3. AI Chatbots
+  4. Websites
+  5. Apps
+
+The site should clearly explain, for each service, what it is and what Xplore Automations builds/delivers as part of it.
+
+## 2. Site Structure
+Build as a **single-page site** (one-pager) with anchor-linked sections, in this order:
+
+1. **Hero / Home** — company intro + a prominent **"Book a Call"** button
+2. **Services** — overview of all 5 services
+3. **Project Library** — portfolio section, organized **by service**
+4. **Testimonials / Client Reviews**
+5. **Video Testimonial** — placeholder slot
+6. **Pricing**
+7. **Footer** — with booking CTA repeated
+
+*(No blog section — removed from scope.)*
+
+## 3. Project Library (Portfolio)
+- One portfolio "library" per service (Automations, Call Agents, Chatbots, Websites, Apps).
+- Each library is filterable/tabbed by service, so a visitor interested in, say, AI Automations clicks that tab and only sees automation-related dummy projects.
+- Populate each with a few placeholder/dummy project cards (name, short description, thumbnail, "view project" link) — to be swapped with real case studies later.
+
+## 4. Testimonials Section
+- **~10–15 client reviews total**, distributed across all 5 services.
+- Include **at least 1 review for the Apps service** and **2–3 reviews specifically for the AI Chatbots service**.
+- Content themes to include:
+  - Voice/Call Agent reviews: emphasize that the AI call agent **doesn't miss/lose a single lead** and handles calls smoothly.
+  - Website reviews: emphasize **speed, responsiveness, and functionality** of the sites built.
+  - AI Chatbot reviews (2–3): emphasize things like fast response times, handling customer queries 24/7, reducing support workload, and improving customer engagement/conversions.
+  - Automation/App reviews: general satisfaction, time saved, results.
+- **Important constraint:** Do **not** use real people's names, photos, or LinkedIn profiles for these — attributing invented quotes to real, identifiable individuals without their consent is misleading and can cause real problems (for them and for you). Instead use **realistic fictional clients** (invented name, role, company, initials-based or generic avatar). Swap in genuine client reviews once you've collected real ones.
+- **Video testimonial:** Leave one clearly marked placeholder slot on the page for a **real client video** (e.g., "Client success story — video coming soon"), which you will personally film and upload later.
+
+## 5. Blog Section
+- Add a blog grid/list on the page with a handful of dummy posts (title, excerpt, date, "read more").
+- Every blog post's cover/wallpaper image should have the **Xplore Automations logo watermarked in the bottom-right corner**.
+
+## 6. Pricing
+- Applies **per service** — pricing must be shown separately for each of the 5 services (Automations, Call Agents, Chatbots, Websites, Apps).
+- **Two plans per service:**
+  1. **Advanced Plan** — show a **dummy fixed price**.
+  2. **Custom Plan** — no price shown; instead a **"Book a Call"** button.
+- **Navigation flow:** Home page has a general "Pricing" link/section. Client clicks Pricing → sees all 5 services listed → clicks the specific service (e.g., "Voice Agents") → sees that service's pricing detail (Advanced price + Custom/Book a Call option). So it's not one flat price list — it's service-specific pricing pages/panels.
+
+## 7. Booking
+- A **"Book a Call"** call-to-action should appear:
+  - On the **homepage/hero** (primary placement)
+  - On every **Custom Plan** pricing card
+  - Ideally also repeated in the footer
+- For now this can link to a placeholder booking page/anchor (e.g., a Calendly-style embed slot) to be connected later.
+
+## 8. Design Notes
+- Match the visual theme/style of the reference site you cloned from GitHub (if you want this replicated exactly, share that repo/site and it can be used as the visual reference).
+- Keep the layout clean and conversion-focused: Hero → Services → Portfolio → Proof (testimonials/video) → Pricing → Book a Call.
+
+---
+
+**Next step:** Want me to go ahead and actually build this as a working HTML site now, using this brief? (I can also match it to the cloned GitHub theme if you share that repo/link or upload the files.)

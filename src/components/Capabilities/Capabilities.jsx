@@ -4,38 +4,38 @@ import CurvedLoop from '../CurvedLoop'
 
 const capabilities = [
     {
-        icon: 'ri-film-line',
-        title: 'Precision Editing',
-        description: 'Premiere Pro & DaVinci Resolve. Pacing that keeps viewers watching.',
+        icon: 'ri-loop-right-line',
+        title: 'AI Automations',
+        description: 'Make.com, n8n and Zapier workflows. Repetitive tasks handled automatically without human input.',
     },
     {
-        icon: 'ri-magic-line',
-        title: 'Motion & VFX',
-        description: 'After Effects mastery. Graphics that elevate production value.',
+        icon: 'ri-phone-line',
+        title: 'AI Call Agents',
+        description: 'Voice agents that answer every call 24/7. Leads qualified, appointments booked and never missed.',
+    },
+    {
+        icon: 'ri-chat-3-line',
+        title: 'AI Chatbots',
+        description: 'Custom-trained on your data. Handles queries, captures leads and converts visitors around the clock.',
+    },
+    {
+        icon: 'ri-window-line',
+        title: 'Websites',
+        description: 'Fast, responsive and conversion-focused. Built to rank, load instantly and turn visitors into clients.',
     },
     {
         icon: 'ri-smartphone-line',
-        title: 'Short-Form',
-        description: 'Reels, TikToks, Shorts. Hook-driven, retention-optimized.',
+        title: 'Apps',
+        description: 'Web and mobile applications with AI at the core. Client portals, dashboards and SaaS products built end-to-end.',
     },
     {
-        icon: 'ri-brain-line',
-        title: 'AI Enhancement',
-        description: 'Upscaling, noise reduction, intelligent compression.',
-    },
-    {
-        icon: 'ri-sound-module-line',
-        title: 'Sound Design',
-        description: 'Audio is half the experience. Soundscapes that hit.',
-    },
-    {
-        icon: 'ri-image-line',
-        title: 'Thumbnails',
-        description: 'Click-worthy thumbnails designed for CTR.',
+        icon: 'ri-database-2-line',
+        title: 'Integrations',
+        description: 'CRM syncing, API connections and data pipelines. Your tools talking to each other in real time.',
     },
 ]
 
-const tools = ['PREMIERE PRO', 'AFTER EFFECTS', 'DAVINCI RESOLVE', 'PHOTOSHOP', 'TOPAZ AI', 'CAPCUT']
+const tools = ['MAKE.COM', 'N8N', 'VAPI', 'OPENAI', 'RETELL AI', 'ZAPIER', 'BOTPRESS', 'VOICEFLOW', 'REACT', 'PYTHON']
 
 function Capabilities() {
     const sectionRef = useRef(null)
@@ -88,7 +88,7 @@ function Capabilities() {
                 {/* Tool curved loop */}
                 <div className="reveal" style={{ margin: '1rem 0' }}>
                     <CurvedLoop
-                        marqueeText={tools.join(' ✦ ') + ' ✦ '}
+                        marqueeText={tools.join(' x ') + ' x '}
                         speed={0.8}
                         curveAmount={0}
                         direction="left"

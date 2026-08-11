@@ -31,28 +31,28 @@ function Hero() {
                     {/* Eyebrow */}
                     <div className="hero-eyebrow">
                         <span className="eyebrow-line"></span>
-                        <span className="mono">Visual Transformation Studio</span>
+                        <span className="mono">AI-Powered Systems for Business</span>
                     </div>
 
                     {/* Main title */}
                     <h1 className="hero-title">
                         <span className="title-line">
-                            <span className="title-word">RAW</span>
-                            <span className="title-arrow">→</span>
-                            <span className="title-word accent">REFINED</span>
+                            <span className="title-word">BUILD</span>
+                            <span className="title-arrow">x</span>
+                            <span className="title-word accent">AUTOMATE</span>
                         </span>
                     </h1>
 
                     {/* Subtitle */}
                     <p className="hero-subtitle">
-                        We don't just "edit" videos, we fix the pacing and punch up the visuals so people
-                        <span className="highlight"> actually stop scrolling.</span>
+                        We deploy AI systems that work around the clock so your business can
+                        <span className="highlight"> scale without limits.</span>
                     </p>
 
                     {/* CTA Group */}
                     <div className="hero-cta">
                         <Button href="#work" variant="primary" magnetic>
-                            View Work <i className="ri-arrow-right-line"></i>
+                            View Our Work <i className="ri-arrow-right-line"></i>
                         </Button>
                         <CalBookingButton className="hero-booking-button">
                             <span className="hero-booking-title">Book Free Call</span>
@@ -62,15 +62,17 @@ function Hero() {
 
                     {/* Trust bar */}
                     <div className="hero-trust">
-                        <span className="trust-label mono">Trusted Tools</span>
+                        <span className="trust-label mono">Services</span>
                         <div className="trust-logos">
-                            <span className="trust-logo">DaVinci Resolve</span>
+                            <span className="trust-logo">AI Automations</span>
                             <span className="trust-divider">•</span>
-                            <span className="trust-logo">After Effects</span>
+                            <span className="trust-logo">Call Agents</span>
                             <span className="trust-divider">•</span>
-                            <span className="trust-logo">Topaz Video</span>
+                            <span className="trust-logo">Chatbots</span>
                             <span className="trust-divider">•</span>
-                            <span className="trust-logo">Photoshop</span>
+                            <span className="trust-logo">Websites</span>
+                            <span className="trust-divider">•</span>
+                            <span className="trust-logo">Apps</span>
                         </div>
                     </div>
                 </div>
@@ -78,18 +80,18 @@ function Hero() {
                 {/* Stats strip */}
                 <div className="hero-stats">
                     <div className="stat">
-                        <span className="stat-number">1M+</span>
-                        <span className="stat-label mono">Views Generated</span>
-                    </div>
-                    <div className="stat-divider"></div>
-                    <div className="stat">
-                        <span className="stat-number">300+</span>
+                        <span className="stat-number">50+</span>
                         <span className="stat-label mono">Projects Delivered</span>
                     </div>
                     <div className="stat-divider"></div>
                     <div className="stat">
-                        <span className="stat-number">∞</span>
-                        <span className="stat-label mono">Revisions Included</span>
+                        <span className="stat-number">5</span>
+                        <span className="stat-label mono">AI Service Lines</span>
+                    </div>
+                    <div className="stat-divider"></div>
+                    <div className="stat">
+                        <span className="stat-number">24/7</span>
+                        <span className="stat-label mono">Systems Run Non-Stop</span>
                     </div>
                 </div>
             </div>

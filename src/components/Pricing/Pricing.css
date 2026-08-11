@@ -1,0 +1,255 @@
+.pricing {
+    padding: 6rem 0 4rem;
+    background: var(--void);
+    position: relative;
+}
+
+.pricing-header {
+    margin-bottom: 2.5rem;
+}
+
+.pricing-title {
+    font-family: 'Clash Display', sans-serif;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+}
+
+.pricing-title .accent {
+    color: var(--accent);
+}
+
+.pricing-subtitle {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-top: 0.75rem;
+}
+
+/* Tabs */
+.pricing-tabs {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+}
+
+.pricing-tab {
+    padding: 0.5rem 1.25rem;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text-secondary);
+    font-family: 'Satoshi', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all 0.25s var(--ease-out);
+    letter-spacing: 0.02em;
+}
+
+.pricing-tab:hover {
+    border-color: var(--border-strong);
+    color: var(--text);
+}
+
+.pricing-tab.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--void);
+    font-weight: 700;
+}
+
+/* Cards */
+.pricing-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    max-width: 860px;
+}
+
+.pricing-cards-3 {
+    grid-template-columns: 1fr 1fr 1fr;
+    max-width: 1100px;
+}
+
+@media (max-width: 960px) {
+    .pricing-cards-3 {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 680px) {
+    .pricing-cards,
+    .pricing-cards-3 {
+        grid-template-columns: 1fr;
+    }
+}
+
+.pricing-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+    transition: border-color 0.3s, transform 0.3s;
+}
+
+.pricing-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--border-strong);
+}
+
+.pricing-card-highlighted {
+    border-color: rgba(255, 255, 255, 0.15);
+    background: linear-gradient(160deg, rgba(255,255,255,0.04) 0%, var(--surface) 60%);
+}
+
+.pricing-card-highlighted:hover {
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.pricing-card-featured {
+    border-color: rgba(212, 255, 0, 0.25);
+    background: linear-gradient(160deg, rgba(212, 255, 0, 0.04) 0%, var(--surface) 60%);
+}
+
+.pricing-card-featured:hover {
+    border-color: rgba(212, 255, 0, 0.5);
+}
+
+.pricing-card-badge {
+    position: absolute;
+    top: -13px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent);
+    color: var(--void);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    font-weight: 700;
+    padding: 0.3rem 0.9rem;
+    border-radius: 100px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+}
+
+.pricing-card-header {
+    margin-bottom: 1.5rem;
+}
+
+.plan-tier {
+    display: block;
+    font-size: 0.65rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+}
+
+.plan-price {
+    font-family: 'Clash Display', sans-serif;
+    font-size: clamp(2rem, 5vw, 2.75rem);
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1;
+    margin-bottom: 0.25rem;
+    letter-spacing: -0.02em;
+}
+
+.plan-price-block {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    margin-bottom: 0.2rem;
+}
+
+.plan-price-block .plan-price {
+    margin-bottom: 0;
+}
+
+.plan-monthly-block {
+    display: flex;
+    align-items: baseline;
+    gap: 0.4rem;
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid var(--border);
+}
+
+.plan-plus {
+    font-family: 'Clash Display', sans-serif;
+    font-size: 1rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    line-height: 1;
+}
+
+.plan-monthly-price {
+    font-family: 'Clash Display', sans-serif;
+    font-size: clamp(1.25rem, 3vw, 1.6rem);
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1;
+    letter-spacing: -0.02em;
+}
+
+.plan-price-custom span {
+    background: linear-gradient(135deg, var(--accent), #a8ff00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.plan-billing {
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+/* Features list */
+.plan-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-bottom: 1.75rem;
+    flex: 1;
+}
+
+.plan-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.plan-features li i {
+    color: var(--accent);
+    font-size: 0.9rem;
+    margin-top: 0.1rem;
+    flex-shrink: 0;
+}
+
+/* CTA buttons inside pricing */
+.plan-cta {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+}
+
+.plan-cta-primary {
+    width: 100%;
+    justify-content: center;
+}

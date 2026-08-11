@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import './Header.css'
 import GlassSurface from '../GlassSurface'
 import Button from '../Button/Button'
+import CalBookingButton from '../CalBookingButton/CalBookingButton'
 import logo from '../../assets/logo.png'
 
 function Header() {
@@ -59,25 +60,22 @@ function Header() {
                 <div className="container">
                     <nav className="nav">
                         <a href="#" className="logo-link">
-                            <img src={logo} alt="AGENXY.MEDIA" className="logo" />
+                            <img src={logo} alt="Xplore Automations" className="logo" />
                         </a>
 
                         <div className="nav-center">
                             <ul className="nav-links">
                                 <li><a href="#work" className="nav-link">Work</a></li>
-                                <li><a href="#process" className="nav-link">Process</a></li>
-                                <li><a href="#capabilities" className="nav-link">Capabilities</a></li>
+                                <li><a href="#capabilities" className="nav-link">Services</a></li>
+                                <li><a href="#pricing" className="nav-link">Pricing</a></li>
+                                <li><a href="#contact" className="nav-link">Contact</a></li>
                             </ul>
                         </div>
 
                         <div className="nav-right">
-                            <span className="nav-status">
-                                <span className="status-dot"></span>
-                                <span className="mono">Available</span>
-                            </span>
-                            <Button href="https://forms.gle/fVeCoSrFoSi55Mww9" target="_blank" rel="noopener noreferrer" variant="primary">
-                                Start Project
-                            </Button>
+                            <CalBookingButton variant="primary">
+                                Book a Call
+                            </CalBookingButton>
                         </div>
 
                         <button
@@ -110,15 +108,21 @@ function Header() {
                             </a>
                         </li>
                         <li>
-                            <a href="#process" className="mobile-nav-link" onClick={handleNavClick}>
+                            <a href="#capabilities" className="mobile-nav-link" onClick={handleNavClick}>
                                 <span className="mobile-nav-number">02</span>
-                                Process
+                                Services
                             </a>
                         </li>
                         <li>
-                            <a href="#capabilities" className="mobile-nav-link" onClick={handleNavClick}>
+                            <a href="#pricing" className="mobile-nav-link" onClick={handleNavClick}>
                                 <span className="mobile-nav-number">03</span>
-                                Capabilities
+                                Pricing
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#contact" className="mobile-nav-link" onClick={handleNavClick}>
+                                <span className="mobile-nav-number">04</span>
+                                Contact
                             </a>
                         </li>
                     </ul>
@@ -126,17 +130,14 @@ function Header() {
                     <div className="mobile-menu-footer">
                         <div className="mobile-status">
                             <span className="status-dot"></span>
-                            <span className="mono">Available for projects</span>
+                            <span className="mono">Available for new projects</span>
                         </div>
-                        <Button
-                            href="https://forms.gle/fVeCoSrFoSi55Mww9"
-                            target="_blank"
-                            rel="noopener noreferrer"
+                        <CalBookingButton
                             variant="primary"
                             onClick={handleNavClick}
                         >
-                            Start Project
-                        </Button>
+                            Book a Call
+                        </CalBookingButton>
                     </div>
                 </nav>
             </div>

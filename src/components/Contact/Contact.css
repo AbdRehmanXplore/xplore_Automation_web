@@ -1,0 +1,266 @@
+.contact {
+    padding: 6rem 0 4rem;
+    background: var(--void);
+    position: relative;
+    overflow: hidden;
+}
+
+.contact::before {
+    content: '';
+    position: absolute;
+    top: -150px;
+    right: -150px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(212,255,0,0.04) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+/* Header */
+.contact-header {
+    margin-bottom: 3rem;
+}
+
+.contact-title {
+    font-family: 'Clash Display', sans-serif;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin-bottom: 0.75rem;
+}
+
+.contact-title .accent { color: var(--accent); }
+
+.contact-subtitle {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    max-width: 480px;
+    line-height: 1.7;
+}
+
+/* Layout */
+.contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.8fr;
+    gap: 3.5rem;
+    align-items: start;
+}
+
+@media (max-width: 900px) {
+    .contact-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+}
+
+/* Info column */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+}
+
+.contact-info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.contact-info-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    background: var(--accent-dim);
+    border: 1px solid var(--accent-glow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--accent);
+    font-size: 1.1rem;
+}
+
+.contact-info-label {
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--text-muted);
+    margin-bottom: 0.25rem;
+}
+
+.contact-info-value {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.25s;
+    line-height: 1.5;
+}
+
+a.contact-info-value:hover { color: var(--accent); }
+
+/* Form wrapper */
+.contact-form-wrap {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2.25rem;
+}
+
+@media (max-width: 480px) {
+    .contact-form-wrap { padding: 1.5rem; }
+}
+
+/* Form internals */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+@media (max-width: 600px) {
+    .form-row { grid-template-columns: 1fr; }
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--text-secondary);
+}
+
+.form-input {
+    width: 100%;
+    background: var(--elevated, #111);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    color: var(--text);
+    font-family: 'Satoshi', sans-serif;
+    font-size: 0.9rem;
+    outline: none;
+    transition: border-color 0.25s, box-shadow 0.25s;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.form-input::placeholder { color: var(--text-muted); }
+
+.form-input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-dim);
+}
+
+.form-group.has-error .form-input {
+    border-color: #f87171;
+    box-shadow: 0 0 0 3px rgba(248,113,113,0.1);
+}
+
+.form-select {
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23666' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 2.2rem;
+}
+
+.form-select option { background: #111; color: #fff; }
+
+.form-textarea {
+    resize: vertical;
+    min-height: 110px;
+    line-height: 1.6;
+}
+
+/* Submit */
+.contact-submit {
+    background: linear-gradient(135deg, var(--accent), #a8ff00);
+    color: var(--void);
+    border: none;
+    border-radius: 8px;
+    padding: 0.9rem 1.5rem;
+    font-family: 'Clash Display', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
+    margin-top: 0.25rem;
+}
+
+.contact-submit:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(212,255,0,0.25);
+}
+
+.contact-submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.form-note {
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+/* Success state */
+.contact-success {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 2rem;
+    text-align: center;
+    animation: cssFadeUp 0.5s var(--ease-out) forwards;
+}
+
+.contact-success-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--accent-dim);
+    border: 1px solid var(--accent-glow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+    font-size: 1.5rem;
+}
+
+.contact-success-title {
+    font-family: 'Clash Display', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.contact-success-text {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    max-width: 360px;
+}
+
+@keyframes cssFadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+}

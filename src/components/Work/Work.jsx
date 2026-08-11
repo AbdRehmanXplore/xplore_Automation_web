@@ -5,27 +5,27 @@ import Button from '../Button/Button'
 const workItems = [
     {
         index: '01',
-        title: 'FROZT MUZIC',
-        category: 'Music Visuals',
-        metric: '1M+ Reach',
-        href: 'https://www.instagram.com/froztmuzic',
-        description: 'Music visualization and rhythm-driven edits'
+        title: 'INVOICE PROCESSING PIPELINE',
+        category: 'AI Automations',
+        metric: '20+ hrs saved weekly',
+        href: '#booking',
+        description: 'End-to-end automation extracting invoice data and syncing to accounting software'
     },
     {
         index: '02',
-        title: 'AGENXY CLIENTS BEFORE AND AFTER',
-        category: 'Agency Work',
-        metric: 'Brand Content',
-        href: 'https://www.instagram.com/agenxy.media',
-        description: 'Professional client content and campaigns'
+        title: '24/7 INBOUND VOICE AGENT',
+        category: 'AI Call Agents',
+        metric: '300+ calls handled monthly',
+        href: '#booking',
+        description: 'AI voice agent qualifying leads and booking appointments around the clock'
     },
     {
         index: '03',
-        title: 'AI-RAW VIDS TO EDITED VIDS',
-        category: 'AI Enhancement',
-        metric: 'HeyGen Post-Production',
-        href: 'https://www.instagram.com/ai.with.100',
-        description: 'Raw AI videos transformed into polished reels'
+        title: 'CUSTOMER SUPPORT CHATBOT',
+        category: 'AI Chatbots',
+        metric: '70% ticket deflection',
+        href: '#booking',
+        description: 'Knowledge-base trained bot resolving queries instantly across all channels'
     }
 ]
 
@@ -67,8 +67,6 @@ function Work() {
                     {workItems.map((item, idx) => (
                         <a
                             href={item.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
                             className={`work-item reveal reveal-delay-${idx + 1}`}
                             key={item.index}
                         >
@@ -86,11 +84,9 @@ function Work() {
                             </div>
                         </a>
                     ))}
-                    
-                    <a 
-                        href="https://drive.google.com/drive/folders/1RJ9J3ZQAHWlyDXyg43mF1DDZFYRB2HfD" 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
+
+                    <a
+                        href="#portfolio"
                         className="portfolio-window reveal reveal-delay-4"
                     >
                         {/* macOS title bar */}
@@ -100,9 +96,9 @@ function Work() {
                                 <span className="dot dot-yellow"></span>
                                 <span className="dot dot-green"></span>
                             </div>
-                            <span className="window-title mono">portfolio — Google Drive</span>
+                            <span className="window-title mono">portfolio - Xplore Automations</span>
                         </div>
-                        
+
                         {/* Window body */}
                         <div className="window-body">
                             <div className="window-folder-icon">
@@ -110,7 +106,7 @@ function Work() {
                             </div>
                             <div className="window-info">
                                 <span className="window-heading">Full Portfolio</span>
-                                <span className="window-sub mono">View all projects & case studies</span>
+                                <span className="window-sub mono">View all AI projects and case studies</span>
                             </div>
                             <div className="window-cta">
                                 <span className="window-cta-text mono">Open</span>
