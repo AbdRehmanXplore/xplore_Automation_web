@@ -28,12 +28,6 @@ function Hero() {
 
             <div className="container">
                 <div className="hero-content">
-                    {/* Eyebrow */}
-                    <div className="hero-eyebrow">
-                        <span className="eyebrow-line"></span>
-                        <span className="mono">AI-Powered Systems for Business</span>
-                    </div>
-
                     {/* Main title */}
                     <h1 className="hero-title">
                         <span className="title-line">

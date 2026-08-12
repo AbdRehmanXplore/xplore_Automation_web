@@ -22,10 +22,17 @@
 }
 
 .logo {
-    height: 3.5rem;
+    height: 5.5rem;
+    width: auto;
     display: block;
     opacity: 0;
     animation: fadeSlideUp 0.6s 0.2s var(--ease-out) forwards;
+    filter: drop-shadow(0 0 8px rgba(0, 229, 255, 0.55)) drop-shadow(0 0 20px rgba(123, 47, 255, 0.35));
+    transition: filter 0.3s ease;
+}
+
+.logo:hover {
+    filter: drop-shadow(0 0 12px rgba(0, 229, 255, 0.8)) drop-shadow(0 0 28px rgba(123, 47, 255, 0.55));
 }
 
 .nav-center {
@@ -279,7 +286,7 @@
 
 @media (max-width: 480px) {
     .logo {
-        height: 2.5rem;
+        height: 4rem;
     }
 
     .header {
