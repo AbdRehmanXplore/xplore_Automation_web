@@ -13,9 +13,52 @@ function BlogListPage() {
 
     useEffect(() => {
         document.title = 'Blog — Xplore Automations'
-        const meta = document.querySelector('meta[name="description"]')
-        if (meta) meta.setAttribute('content', 'Automation insights, AI strategies, and real case data from the Xplore Automations team. Built for Pakistani businesses.')
+        const desc = 'Automation insights, AI strategies, and real case data from the Xplore Automations team. Built for Pakistani businesses.'
+
+        const metaUpdates = {
+            'description': desc,
+            'og:title': 'Blog — Xplore Automations',
+            'og:description': desc,
+            'og:url': 'https://www.xploreautomation.me/blog',
+        }
+        Object.entries(metaUpdates).forEach(([key, value]) => {
+            const isOg = key.startsWith('og:')
+            const attr = isOg ? 'property' : 'name'
+            const el = document.querySelector(`meta[${attr}="${key}"]`)
+            if (el) el.setAttribute('content', value)
+        })
+
+        // JSON-LD CollectionPage
+        const jsonLd = {
+            '@context': 'https://schema.org',
+            '@type': 'CollectionPage',
+            name: 'Blog — Xplore Automations',
+            description: desc,
+            url: 'https://www.xploreautomation.me/blog',
+            mainEntity: {
+                '@type': 'ItemList',
+                itemListElement: blogs.map((b, i) => ({
+                    '@type': 'ListItem',
+                    position: i + 1,
+                    url: `https://www.xploreautomation.me/blog/${b.slug}`,
+                    name: b.title
+                }))
+            }
+        }
+        let script = document.getElementById('bloglist-jsonld')
+        if (!script) {
+            script = document.createElement('script')
+            script.id = 'bloglist-jsonld'
+            script.type = 'application/ld+json'
+            document.head.appendChild(script)
+        }
+        script.textContent = JSON.stringify(jsonLd)
+
         window.scrollTo(0, 0)
+        return () => {
+            const el = document.getElementById('bloglist-jsonld')
+            if (el) el.remove()
+        }
     }, [])
 
     return (

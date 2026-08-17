@@ -11,8 +11,33 @@ function CasePostPage() {
     useEffect(() => {
         if (!c) return
         document.title = `${c.title} — Xplore Automations`
-        let meta = document.querySelector('meta[name="description"]')
-        if (meta) meta.setAttribute('content', c.metaDescription)
+
+        // Update meta tags for SEO + social sharing
+        const metaUpdates = {
+            'description': c.metaDescription,
+            'og:title': c.title,
+            'og:description': c.metaDescription,
+            'og:url': `https://www.xploreautomation.me/cases/${c.slug}`,
+            'og:type': 'article',
+            'twitter:title': c.title,
+            'twitter:description': c.metaDescription,
+        }
+        const originalMeta = {}
+        Object.entries(metaUpdates).forEach(([key, value]) => {
+            const isOg = key.startsWith('og:') || key.startsWith('twitter:')
+            const attr = isOg ? 'property' : 'name'
+            let el = document.querySelector(`meta[${attr}="${key}"]`)
+            if (el) {
+                originalMeta[key] = { attr, value: el.getAttribute('content') }
+                el.setAttribute('content', value)
+            } else {
+                el = document.createElement('meta')
+                el.setAttribute(attr, key)
+                el.setAttribute('content', value)
+                document.head.appendChild(el)
+                originalMeta[key] = { attr, value: null }
+            }
+        })
 
         // JSON-LD for Case Study
         const jsonLd = {
@@ -24,13 +49,13 @@ function CasePostPage() {
             publisher: {
                 '@type': 'Organization',
                 name: 'Xplore Automations',
-                url: 'https://xploreautomations.com'
+                url: 'https://www.xploreautomation.me'
             },
             datePublished: `${c.date}-01`,
             keywords: c.tags.join(', '),
             mainEntityOfPage: {
                 '@type': 'WebPage',
-                '@id': `https://xploreautomations.com/cases/${c.slug}`
+                '@id': `https://www.xploreautomation.me/cases/${c.slug}`
             }
         }
         let script = document.getElementById('case-jsonld')
@@ -46,6 +71,11 @@ function CasePostPage() {
         return () => {
             const el = document.getElementById('case-jsonld')
             if (el) el.remove()
+            Object.entries(originalMeta).forEach(([key, { attr, value }]) => {
+                const meta = document.querySelector(`meta[${attr}="${key}"]`)
+                if (meta && value !== null) meta.setAttribute('content', value)
+                else if (meta && value === null) meta.remove()
+            })
         }
     }, [c])
 

@@ -11,8 +11,33 @@ function BlogPostPage() {
     useEffect(() => {
         if (!post) return
         document.title = `${post.title} — Xplore Automations`
-        let meta = document.querySelector('meta[name="description"]')
-        if (meta) meta.setAttribute('content', post.metaDescription)
+
+        // Update meta tags for SEO + social sharing
+        const metaUpdates = {
+            'description': post.metaDescription,
+            'og:title': post.title,
+            'og:description': post.metaDescription,
+            'og:url': `https://www.xploreautomation.me/blog/${post.slug}`,
+            'og:type': 'article',
+            'twitter:title': post.title,
+            'twitter:description': post.metaDescription,
+        }
+        const originalMeta = {}
+        Object.entries(metaUpdates).forEach(([key, value]) => {
+            const isOg = key.startsWith('og:') || key.startsWith('twitter:')
+            const attr = isOg ? 'property' : 'name'
+            let el = document.querySelector(`meta[${attr}="${key}"]`)
+            if (el) {
+                originalMeta[key] = { attr, value: el.getAttribute('content') }
+                el.setAttribute('content', value)
+            } else {
+                el = document.createElement('meta')
+                el.setAttribute(attr, key)
+                el.setAttribute('content', value)
+                document.head.appendChild(el)
+                originalMeta[key] = { attr, value: null }
+            }
+        })
 
         // JSON-LD Structured Data for Google rich snippets
         const jsonLd = {
@@ -24,13 +49,13 @@ function BlogPostPage() {
             publisher: {
                 '@type': 'Organization',
                 name: 'Xplore Automations',
-                url: 'https://xploreautomations.com'
+                url: 'https://www.xploreautomation.me'
             },
             datePublished: post.date,
             keywords: post.tags.join(', '),
             mainEntityOfPage: {
                 '@type': 'WebPage',
-                '@id': `https://xploreautomations.com/blog/${post.slug}`
+                '@id': `https://www.xploreautomation.me/blog/${post.slug}`
             }
         }
         let script = document.getElementById('blog-jsonld')
@@ -46,6 +71,12 @@ function BlogPostPage() {
         return () => {
             const el = document.getElementById('blog-jsonld')
             if (el) el.remove()
+            // Restore original meta tags
+            Object.entries(originalMeta).forEach(([key, { attr, value }]) => {
+                const meta = document.querySelector(`meta[${attr}="${key}"]`)
+                if (meta && value !== null) meta.setAttribute('content', value)
+                else if (meta && value === null) meta.remove()
+            })
         }
     }, [post])
 

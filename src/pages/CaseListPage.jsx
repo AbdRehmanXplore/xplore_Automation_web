@@ -14,9 +14,52 @@ function CaseListPage() {
 
     useEffect(() => {
         document.title = 'Case Studies — Xplore Automations'
-        const meta = document.querySelector('meta[name="description"]')
-        if (meta) meta.setAttribute('content', 'Real automation case studies — see exactly how Xplore Automations helped businesses in Pakistan save time, cut costs, and grow revenue.')
+        const desc = 'Real automation case studies — see exactly how Xplore Automations helped businesses in Pakistan save time, cut costs, and grow revenue.'
+
+        const metaUpdates = {
+            'description': desc,
+            'og:title': 'Case Studies — Xplore Automations',
+            'og:description': desc,
+            'og:url': 'https://www.xploreautomation.me/cases',
+        }
+        Object.entries(metaUpdates).forEach(([key, value]) => {
+            const isOg = key.startsWith('og:')
+            const attr = isOg ? 'property' : 'name'
+            const el = document.querySelector(`meta[${attr}="${key}"]`)
+            if (el) el.setAttribute('content', value)
+        })
+
+        // JSON-LD CollectionPage
+        const jsonLd = {
+            '@context': 'https://schema.org',
+            '@type': 'CollectionPage',
+            name: 'Case Studies — Xplore Automations',
+            description: desc,
+            url: 'https://www.xploreautomation.me/cases',
+            mainEntity: {
+                '@type': 'ItemList',
+                itemListElement: cases.map((c, i) => ({
+                    '@type': 'ListItem',
+                    position: i + 1,
+                    url: `https://www.xploreautomation.me/cases/${c.slug}`,
+                    name: c.title
+                }))
+            }
+        }
+        let script = document.getElementById('caselist-jsonld')
+        if (!script) {
+            script = document.createElement('script')
+            script.id = 'caselist-jsonld'
+            script.type = 'application/ld+json'
+            document.head.appendChild(script)
+        }
+        script.textContent = JSON.stringify(jsonLd)
+
         window.scrollTo(0, 0)
+        return () => {
+            const el = document.getElementById('caselist-jsonld')
+            if (el) el.remove()
+        }
     }, [])
 
     return (
