@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { Link } from 'react-router-dom'
 import './Footer.css'
 
 function Footer() {
@@ -45,10 +46,10 @@ function Footer() {
                                 <a href="mailto:hello@xploreautomations.com" className="social-circle" aria-label="Email">
                                     <i className="ri-mail-line"></i>
                                 </a>
-                                <a href="#" target="_blank" rel="noopener noreferrer" className="social-circle" aria-label="LinkedIn">
+                                <a href="https://www.linkedin.com/company/xplore-automations/" target="_blank" rel="noopener noreferrer" className="social-circle" aria-label="LinkedIn">
                                     <i className="ri-linkedin-line"></i>
                                 </a>
-                                <a href="#" target="_blank" rel="noopener noreferrer" className="social-circle" aria-label="Instagram">
+                                <a href="https://www.instagram.com/xplore_automations/" target="_blank" rel="noopener noreferrer" className="social-circle" aria-label="Instagram">
                                     <i className="ri-instagram-line"></i>
                                 </a>
                                 <a href="#" target="_blank" rel="noopener noreferrer" className="social-circle" aria-label="Twitter">
@@ -57,6 +58,26 @@ function Footer() {
                             </div>
                         </div>
                     </div>
+
+                    {/* Footer Nav Links */}
+                    <nav className="footer-nav" aria-label="Footer navigation">
+                        <div className="footer-nav-col">
+                            <span className="footer-nav-heading mono">Company</span>
+                            <ul>
+                                <li><a href="/#work">Work</a></li>
+                                <li><a href="/#capabilities">Services</a></li>
+                                <li><a href="/#pricing">Pricing</a></li>
+                                <li><a href="/#contact">Contact</a></li>
+                            </ul>
+                        </div>
+                        <div className="footer-nav-col">
+                            <span className="footer-nav-heading mono">Resources</span>
+                            <ul>
+                                <li><Link to="/cases">Case Studies</Link></li>
+                                <li><Link to="/blog">Blog</Link></li>
+                            </ul>
+                        </div>
+                    </nav>
                 </div>
 
 

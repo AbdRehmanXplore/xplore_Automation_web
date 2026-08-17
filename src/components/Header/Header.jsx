@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import './Header.css'
-import GlassSurface from '../GlassSurface'
-import Button from '../Button/Button'
 import CalBookingButton from '../CalBookingButton/CalBookingButton'
 import logo from '../../assets/logo.png'
 
 function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
+    const [scrolled, setScrolled] = useState(false)
 
     // Close menu on escape key
     useEffect(() => {
@@ -15,6 +15,15 @@ function Header() {
         }
         document.addEventListener('keydown', handleEscape)
         return () => document.removeEventListener('keydown', handleEscape)
+    }, [])
+
+    // Scroll detection for navbar background
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 60)
+        }
+        window.addEventListener('scroll', handleScroll, { passive: true })
+        return () => window.removeEventListener('scroll', handleScroll)
     }, [])
 
     // Prevent body scroll when menu is open
@@ -35,28 +44,7 @@ function Header() {
 
     return (
         <>
-            <GlassSurface
-                className="header"
-                width="min(1200px, 90%)"
-                height="auto"
-                borderRadius={40}
-                borderWidth={0}
-                opacity={0.8}
-                blur={12}
-                displace={0.3}
-                distortionScale={-180}
-                redOffset={0}
-                greenOffset={10}
-                blueOffset={20}
-                mixBlendMode="screen"
-                style={{
-                    position: 'fixed',
-                    top: '20px',
-                    left: '50%',
-                    transform: 'translateX(-50%)',
-                    zIndex: 100
-                }}
-            >
+            <header className={`header ${scrolled ? 'header--scrolled' : ''}`}>
                 <div className="container">
                     <nav className="nav">
                         <a href="#" className="logo-link">
@@ -65,10 +53,12 @@ function Header() {
 
                         <div className="nav-center">
                             <ul className="nav-links">
-                                <li><a href="#work" className="nav-link">Work</a></li>
-                                <li><a href="#capabilities" className="nav-link">Services</a></li>
-                                <li><a href="#pricing" className="nav-link">Pricing</a></li>
-                                <li><a href="#contact" className="nav-link">Contact</a></li>
+                                <li><a href="/#work" className="nav-link">Work</a></li>
+                                <li><a href="/#capabilities" className="nav-link">Services</a></li>
+                                <li><a href="/#pricing" className="nav-link">Pricing</a></li>
+                                <li><Link to="/cases" className="nav-link">Cases</Link></li>
+                                <li><Link to="/blog" className="nav-link">Blog</Link></li>
+                                <li><a href="/#contact" className="nav-link">Contact</a></li>
                             </ul>
                         </div>
 
@@ -89,7 +79,7 @@ function Header() {
                         </button>
                     </nav>
                 </div>
-            </GlassSurface>
+            </header>
 
             {/* Mobile Menu Overlay */}
             <div
@@ -102,26 +92,38 @@ function Header() {
                 <nav className="mobile-nav">
                     <ul className="mobile-nav-links">
                         <li>
-                            <a href="#work" className="mobile-nav-link" onClick={handleNavClick}>
+                            <a href="/#work" className="mobile-nav-link" onClick={handleNavClick}>
                                 <span className="mobile-nav-number">01</span>
                                 Work
                             </a>
                         </li>
                         <li>
-                            <a href="#capabilities" className="mobile-nav-link" onClick={handleNavClick}>
+                            <a href="/#capabilities" className="mobile-nav-link" onClick={handleNavClick}>
                                 <span className="mobile-nav-number">02</span>
                                 Services
                             </a>
                         </li>
                         <li>
-                            <a href="#pricing" className="mobile-nav-link" onClick={handleNavClick}>
+                            <a href="/#pricing" className="mobile-nav-link" onClick={handleNavClick}>
                                 <span className="mobile-nav-number">03</span>
                                 Pricing
                             </a>
                         </li>
                         <li>
-                            <a href="#contact" className="mobile-nav-link" onClick={handleNavClick}>
+                            <Link to="/cases" className="mobile-nav-link" onClick={handleNavClick}>
                                 <span className="mobile-nav-number">04</span>
+                                Cases
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/blog" className="mobile-nav-link" onClick={handleNavClick}>
+                                <span className="mobile-nav-number">05</span>
+                                Blog
+                            </Link>
+                        </li>
+                        <li>
+                            <a href="/#contact" className="mobile-nav-link" onClick={handleNavClick}>
+                                <span className="mobile-nav-number">06</span>
                                 Contact
                             </a>
                         </li>

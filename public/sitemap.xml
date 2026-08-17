@@ -4,7 +4,7 @@
     <!-- Homepage -->
     <url>
         <loc>https://www.xploreautomation.me/</loc>
-        <lastmod>2026-08-12</lastmod>
+        <lastmod>2026-08-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
@@ -12,23 +12,81 @@
     <!-- Sections (anchor links) -->
     <url>
         <loc>https://www.xploreautomation.me/#services</loc>
-        <lastmod>2026-08-12</lastmod>
+        <lastmod>2026-08-13</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
         <loc>https://www.xploreautomation.me/#pricing</loc>
-        <lastmod>2026-08-12</lastmod>
+        <lastmod>2026-08-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
         <loc>https://www.xploreautomation.me/#contact</loc>
-        <lastmod>2026-08-12</lastmod>
+        <lastmod>2026-08-13</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
+    </url>
+
+    <!-- Case Studies -->
+    <url>
+        <loc>https://www.xploreautomation.me/cases</loc>
+        <lastmod>2026-08-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://www.xploreautomation.me/cases/ecommerce-whatsapp-bot-lahore</loc>
+        <lastmod>2025-07-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://www.xploreautomation.me/cases/real-estate-crm-automation-karachi</loc>
+        <lastmod>2025-05-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://www.xploreautomation.me/cases/saas-onboarding-automation</loc>
+        <lastmod>2025-06-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Blog -->
+    <url>
+        <loc>https://www.xploreautomation.me/blog</loc>
+        <lastmod>2026-08-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://www.xploreautomation.me/blog/how-whatsapp-automation-tripled-leads</loc>
+        <lastmod>2025-07-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://www.xploreautomation.me/blog/ai-chatbots-vs-human-support-real-numbers</loc>
+        <lastmod>2025-07-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://www.xploreautomation.me/blog/top-5-automation-tools-for-pakistani-businesses-2025</loc>
+        <lastmod>2025-06-22</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
     </url>
 
 </urlset>

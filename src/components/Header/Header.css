@@ -1,12 +1,38 @@
 .header {
-    /* Position handled by style prop in JSX */
-    /* Glass effect handled by GlassSurface component */
-    padding: 1rem 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 100;
+    padding: 1.2rem 0;
+    background: transparent;
+    border-bottom: 1px solid transparent;
+    transition:
+        background 0.4s ease,
+        border-color 0.4s ease,
+        backdrop-filter 0.4s ease,
+        padding 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+/* Scrolled state — dark glass effect */
+.header--scrolled {
+    background: rgba(8, 8, 12, 0.82);
+    backdrop-filter: blur(18px) saturate(1.6);
+    -webkit-backdrop-filter: blur(18px) saturate(1.6);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 4px 40px rgba(0, 0, 0, 0.45);
+    padding: 0.75rem 0;
 }
 
 @media (max-width: 768px) {
     .header {
-        padding: 0.75rem 0;
+        padding: 0.9rem 0;
+    }
+
+    .header--scrolled {
+        padding: 0.6rem 0;
     }
 }
 
